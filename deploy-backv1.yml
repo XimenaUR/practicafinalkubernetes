@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  backend-v1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-v1
+  template:
+    metadata:
+      labels:
+        app: backend-v1
+    spec: 
+      containers:
+      - name: backend-v1
+        image: ximenaurbieta/backend:1.0.0.
+        ports:
+        - containerPort: 3000
